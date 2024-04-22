@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import NavbarComponent from './components/Navbar/NavbarComponent'
+import AllTheBooks from './components/AllTheBooks/AllTheBooks';
+import { useState } from 'react';
+import Fantasy from './books/fantasy.json';
+import SearchBarComponent from './components/SearchBar/SearchBarComponent'
+import WelcomeComponent from './components/Welcome/WelcomeComponent';
+
 
 function App() {
+
+  const [books, setBooks] = useState(Fantasy)
+  const [booksInit, setBooksInit] = useState(Fantasy)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavbarComponent />
+      <WelcomeComponent />
+      <SearchBarComponent allBooks={books} setBooks={setBooks} booksInit={booksInit}/>
+      <AllTheBooks allBooks={books}/>
+    </>
   );
 }
 

@@ -1,0 +1,38 @@
+.imgStyle {
+    height: 300px;
+    width: 200px !important;
+    object-fit: cover;
+    border-radius: 30px !important;
+}
+
+.cardStyle {
+    height: 600px !important;
+    padding-top: 2% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    background-color: aliceblue !important;
+    border-radius: 30px !important;
+    border: none !important;
+}
+
+.titleStyle {
+    font-size: 1em !important;
+    font-weight: bold !important;
+    height: 100px !important;
+}
+
+.asinStyle {
+    font-size: 0.7em;
+    color: gray;
+}
+
+.btnStyle {
+    border: none;
+    border-radius: 30px;
+    background-color: rgb(138, 179, 215);
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
