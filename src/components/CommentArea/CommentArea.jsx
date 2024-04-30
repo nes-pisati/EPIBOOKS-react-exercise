@@ -2,33 +2,34 @@ import { useEffect, useState } from "react"
 import CommentList from "../CommentList/CommentList";
 import AddComment from "../AddComment/AddComment";
 
-//const URL = "https://striveschool-api.herokuapp.com/api/books/" // :asin/comments/
-const URLprova = "https://striveschool-api.herokuapp.com/api/books/0316438960/comments/"
+export default function CommentArea({asin}) {
 
-export default function CommentArea() {
-
-    /*useEffect(()=> {
-    fetch(URL + asin + "/comments/")
-    .then(json => {
-        setComments(json);
-        })
-    })*/
+    const URL = `https://striveschool-api.herokuapp.com/api/books/${asin}/comments/`
 
     const [comments, setComments] = useState([])
-    console.log(comments);
+    const [rerender, setRerender] = useState(false)
+    //console.log(comments);
+
+    const getComments = async () => {
+        try {
+            const response = await fetch(URL)
+            const data = await response.json()
+            setComments(data)
+        } catch (error) {
+            console.log("errore nel caricamento");
+        }
+    }
 
     useEffect(() => {
-        fetch(URLprova)
-        .then (response => response.json())
-        .then(json => {
-            setComments(json);
-        })
-    })
+        getComments()
+    }, [rerender])
+
+    const toggleRerender = () => setRerender(!rerender)
 
     return (
         <>
-            <CommentList />
-            <AddComment />
+            <CommentList comments={comments}/>
+            <AddComment asin={asin} rerender={toggleRerender}/>
         </>
     )
 }

@@ -1,9 +1,9 @@
 import ListGroup from 'react-bootstrap/ListGroup';
 
-export default function CommentList(props) {
+export default function CommentList({comments}) {
     return (
         <ListGroup>
-            <ListGroup.Item>{props.comment}</ListGroup.Item>
+            {comments && comments.map(comment => <ListGroup.Item>{comment.comment}</ListGroup.Item>)}
         </ListGroup>
     )
 }

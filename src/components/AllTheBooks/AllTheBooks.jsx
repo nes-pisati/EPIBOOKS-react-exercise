@@ -7,7 +7,7 @@ import SingleBook from '../SingleBook/SingleBook';
 export default function AllTheBooks(props) {
     return (
         <Container>
-            <Row>
+            <Row className='row-gap-3'>
                 {props.allBooks.map((book)=>(
                     <SingleBook 
                         key= {book.asin} 
