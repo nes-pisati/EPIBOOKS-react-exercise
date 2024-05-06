@@ -1,20 +1,7 @@
-.heroImg {
-    object-fit: cover;
-    width: 600px;
-    height: 400px;
-    border-radius: 50px;
-    background-image: "./assets/light";
-}
-
-.isDarkMode {
-    background-color: #212529;
-    color: white;
-}
-
-.title {
-    font-weight: bold;
-    font-size: 5em;
-    line-height: normal;
+.searchBarStyle {
+    width: 90%;
+    border-radius: 30px;
+    border: 1px solid gray;
 }
 
 .btnLightStyle {

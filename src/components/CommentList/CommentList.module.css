@@ -1,0 +1,14 @@
+.ListTitle {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.ListTitleDark {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: white;
+}
+
+.ListItem {
+    font-size: 0.9em;
+}

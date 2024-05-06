@@ -1,0 +1,31 @@
+.title {
+    font-weight: bold;
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+.img {
+    width: 300px;
+    height: 400px;
+}
+
+.bookTitle {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+.btn {
+    border: none;
+    padding: 3%;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.isDarkMode {
+    background-color: #212529;
+    color: white;
+}

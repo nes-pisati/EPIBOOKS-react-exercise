@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {Container, Row, Col} from 'react-bootstrap'
-
+import Styles from './SearchBarComponent.module.css'
+import { ThemeContext } from "../../contexts/ThemeContext"
 
 export default function SearchBar(props) {
 
     const [input, setInput] = useState('')
+    const {isDarkMode} = useContext(ThemeContext)
 
     const handleChangeInput = (e) => {
         if (e.target.value === "") {
@@ -20,12 +22,12 @@ export default function SearchBar(props) {
     }
 
     return (
-        <Container>
+        <Container> 
             <Row>
-                <Col>
-                    <div className="d-flex justify-content-between my-3">
-                        <input type="text" className='w-100' onChange={handleChangeInput}/>
-                        <button onClick={filterBooks}>Cerca</button>
+                <Col xs={12} md={6}>
+                    <div className="d-flex justify-content-between my-3 gap-1">
+                        <input type="text" data-testid='searchbar-input' className={Styles.searchBarStyle} onChange={handleChangeInput}/>
+                        <button onClick={filterBooks} className={isDarkMode? Styles.btnDarkStyle : Styles.btnLightStyle}>Cerca</button>
                     </div>
                 </Col>
             </Row>

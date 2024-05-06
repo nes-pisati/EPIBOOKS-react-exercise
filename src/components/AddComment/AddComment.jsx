@@ -1,12 +1,15 @@
 import Form from 'react-bootstrap/Form';
 import { Container, Row, Col } from 'react-bootstrap'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import Styles from './AddComment.module.css'
+import { ThemeContext } from "../../contexts/ThemeContext"
 
 export default function AddComment({asin, rerender}) {
 
     const URLpost = "https://striveschool-api.herokuapp.com/api/comments/"
 
     const [formData, setFormData] = useState({})
+    const {isDarkMode} = useContext(ThemeContext)
 
     const handleInputChange = (e)=> {
         const {name, value} = e.target
@@ -40,22 +43,22 @@ export default function AddComment({asin, rerender}) {
 
     return (
         <>
-            <Container>
+            <Container className='mt-3 p-0'>
                 <Row>
                     <Form onSubmit={onSubmit}>
                         <Col xl={5}>
                             <Form.Group className="mb-3" controlId="formGroupRate">
-                                <Form.Label>Rate this book</Form.Label>
+                                <Form.Label className={isDarkMode? Styles.FormTitleDark : Styles.FormTitle}>Rate this book</Form.Label>
                                 <Form.Control type="number" placeholder="inserisci un voto da 1 a 5" name="rate" required maxlength={5} minLength={1} onChange={handleInputChange}/>
                             </Form.Group>
                         </Col>
                         <Col xl={5}>
                             <Form.Group className="mb-3" controlId="formGroupComment">
-                                <Form.Label>Comment</Form.Label>
-                                <Form.Control type="text" placeholder="inserisci la tua recensione" name="comment" onChange={handleInputChange}/>
+                                <Form.Label className={isDarkMode? Styles.FormTitleDark : Styles.FormTitle}>Comment</Form.Label>
+                                <Form.Control className={Styles.Input} type="text" placeholder="inserisci la tua recensione" name="comment" onChange={handleInputChange}/>
                             </Form.Group>
                         </Col>
-                        <button type='submit'>Send</button>
+                        <button type='submit' className={isDarkMode? Styles.BtnDark : Styles.Btn}>Send</button>
                     </Form>
                 </Row>
             </Container>

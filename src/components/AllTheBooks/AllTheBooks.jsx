@@ -1,15 +1,15 @@
 import { Container, Row } from 'react-bootstrap';
-import Fantasy from '../../books/fantasy.json';
 import SingleBook from '../SingleBook/SingleBook';
 
 
-
 export default function AllTheBooks(props) {
+
     return (
         <Container>
             <Row className='row-gap-3'>
-                {props.allBooks.map((book)=>(
+                {props.allBooks.map((book, i)=>(
                     <SingleBook 
+                        index = {i}
                         key= {book.asin} 
                         img = {book.img}
                         title = {book.title}

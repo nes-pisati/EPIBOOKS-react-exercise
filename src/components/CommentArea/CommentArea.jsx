@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import CommentList from "../CommentList/CommentList";
 import AddComment from "../AddComment/AddComment";
 
@@ -8,7 +8,7 @@ export default function CommentArea({asin}) {
 
     const [comments, setComments] = useState([])
     const [rerender, setRerender] = useState(false)
-    //console.log(comments);
+    console.log(comments);
 
     const getComments = async () => {
         try {

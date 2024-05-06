@@ -1,0 +1,18 @@
+.imgStyle{
+    width: 600px;
+}
+
+.btnStyle{
+    margin-top: 3%;
+    padding: 2%;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    background-color: #002E9B;
+    color: white;
+}
+
+.textStyle {
+    font-size: 2em;
+    font-weight: bold;
+}

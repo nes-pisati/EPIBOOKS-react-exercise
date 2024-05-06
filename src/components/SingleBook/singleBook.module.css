@@ -1,17 +1,26 @@
 .imgStyle {
     height: 300px;
-    width: 200px !important;
+    width: 100%;
     object-fit: cover;
-    border-radius: 30px !important;
+    border-radius: 5px;
 }
 
-.cardStyle {
-    height: 600px !important;
-    padding-top: 2% !important;
+.cardStyleLight {
+    height: 600px;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    background-color: aliceblue !important;
+    background-color: #2125290f !important ;
+    border-radius: 30px !important;
+    border: none !important;
+}
+
+.cardStyleDark {
+    height: 600px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    background-color: white !important ;
     border-radius: 30px !important;
     border: none !important;
 }
@@ -19,7 +28,11 @@
 .titleStyle {
     font-size: 1em !important;
     font-weight: bold !important;
-    height: 100px !important;
+    height: fit-content !important;
+    text-align: center;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .asinStyle {
@@ -30,9 +43,9 @@
 .btnStyle {
     border: none;
     border-radius: 30px;
-    background-color: rgb(138, 179, 215);
+    background-color: #212529;
     color: white;
-    font-weight: bold;
-    font-size: 0.9em;
+    font-weight: 400;
+    font-size: 0.8em;
 }
 

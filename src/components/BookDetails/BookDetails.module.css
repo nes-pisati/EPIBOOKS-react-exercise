@@ -1,0 +1,21 @@
+.imgStyle {
+    width: 80%;
+    border-radius: 30px;
+}
+
+.BookTitle {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.BookTitleDark {
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+}
+
+.Price {
+    font-size: 1.2em;
+    color: gray;
+    font-style: italic;
+}
